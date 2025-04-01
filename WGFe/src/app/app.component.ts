@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'WGFe';
+export class AppComponent implements OnInit {
+  isDarkMode = true;
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+
+    if (!this.isDarkMode) {
+      document.body.classList.remove('dark-theme');
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark-theme');
+    }
+  }
+
+  ngOnInit(): void {
+    document.body.classList.add('dark-theme');
+  }
 }

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wdth,wght@87.5,600&display=swap');
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  padding: 0;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 87.5;
+  span {
+    color: black;
+  }
+
+  span:nth-child(2):hover {
+    color: blue;
+  }
+}
