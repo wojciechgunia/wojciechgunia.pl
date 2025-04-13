@@ -18,6 +18,7 @@ public class Content {
     @SequenceGenerator(name="users_id_seq", sequenceName = "users_id_seq",allocationSize = 1)
     private long id;
     private String code;
+    private String site;
     private String lang;
     private String type;
     private String text;

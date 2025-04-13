@@ -22,6 +22,11 @@ public class ContentController {
         return this.contentMediator.getContent(code, lang);
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/site")
+    public ResponseEntity<?> getContentList(@RequestParam String site, @RequestParam(defaultValue = "en") String lang) {
+        return this.contentMediator.getContentList(site, lang);
+    }
+
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<Response> editContent(@RequestBody ContentDTO contentDTO) {
         return this.contentMediator.editContent(contentDTO);

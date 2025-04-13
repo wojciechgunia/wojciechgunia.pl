@@ -16,6 +16,7 @@ CREATE TABLE content
 (
     id serial primary key,
     code varchar not null,
+    site varchar not null,
     lang varchar(2) not null,
     type varchar not null,
     text TEXT null,

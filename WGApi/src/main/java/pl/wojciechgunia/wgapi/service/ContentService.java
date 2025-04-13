@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.wojciechgunia.wgapi.entity.Content;
 import pl.wojciechgunia.wgapi.repository.ContentRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,5 +19,9 @@ public class ContentService {
 
     public void editContent(Content content) {
         this.contentRepository.save(content);
+    }
+
+    public Optional<List<Content>> getContentList(String site, String lang) {
+        return this.contentRepository.findContentBySiteAndLang(site, lang);
     }
 }
