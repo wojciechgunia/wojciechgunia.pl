@@ -1,8 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container justify-content-between d-flex">
     <a class="navbar-brand" href="#">
-      <span>Wojciech</span>&nbsp;<span>Gunia</span>&nbsp;
-      <img ngSrc="./../public/logo.PNG" alt="Logo" height="826" class="d-inline-block align-text-top" width="826">
+      <div id="svg-logo"></div>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,6 +16,15 @@
         </li>
         <li class="nav-item m-3 m-lg-0">
           <a class="nav-link" href="#"><mat-icon>contact_phone</mat-icon>&nbsp;&nbsp;Kontakt</a>
+        </li>
+        <li class="nav-item m-3 m-lg-0">
+          <mat-form-field appearance="outline" style="width: 100px">
+            <mat-select [(value)]="selectedValue">
+              <mat-option *ngFor="let item of items" [value]="item.value">
+                <div style="display: flex; gap: 3px"><img src="flags/{{ item.value }}.svg" alt="{{ item.name }}"> {{ item.name }}</div>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </li>
       </ul>
     </div>

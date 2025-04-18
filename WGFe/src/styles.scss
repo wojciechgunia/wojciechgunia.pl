@@ -3,10 +3,14 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.6.0/css/flag-icon.min.css');
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Inter', sans-serif; }
 
 .dark-theme {
   background-color: #0C172D !important;
+}
+
+#tekst:hover text,#tekst:hover tspan {
+  fill: #a5c6ea !important;
 }
