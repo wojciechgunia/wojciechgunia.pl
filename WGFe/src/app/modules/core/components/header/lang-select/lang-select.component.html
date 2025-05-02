@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <button class="wrapper" (click)="dropdown = !dropdown">
+    <img src="flags/{{lang}}.svg" alt="pl">
+  </button>
+
+  <div class="list" *ngIf="dropdown">
+    <button class="item" (click)="changeLang('en')">
+      <img src="flags/en.svg" alt="en">
+    </button>
+
+    <button class="item" (click)="changeLang('pl')">
+      <img src="flags/pl.svg" alt="pl">
+    </button>
+  </div>
+</div>

@@ -11,6 +11,73 @@ body { margin: 0; font-family: 'Inter', sans-serif; }
   background-color: #0C172D !important;
 }
 
+#tekst text,#tekst tspan {
+  fill: #191919;
+}
+
 #tekst:hover text,#tekst:hover tspan {
-  fill: #a5c6ea !important;
+  fill: var(--main-color) !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+:root {
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #2285ec;
+}
+
+h1, h2,h3, h4 {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  --form-background: #fff;
+  --bg-color: #f0f0f0;
+  background-color: var(--bg-color) !important;
+}
+
+body.dark-theme {
+  --form-background: transparent;
+  --bg-color: #081b29;
+  color: var(--text-color) !important;
+  a {
+    color: var(--text-color) !important;
+  }
+  a:hover {
+    color: var(--main-color) !important;
+  }
+
+  #tekst text,#tekst tspan {
+    fill: var(--text-color);
+  }
+
+  #tekst:hover text,#tekst:hover tspan {
+    fill: var(--main-color) !important;
+  }
+}
+
+mat-form-field {
+  width: 100% !important;
+}
+
+.mat-mdc-raised-button, .mat-mdc-raised-button .mdc-button__ripple {
+  width: 100% !important;
+  height: 56px !important;
+  border-radius: 5px !important;
+  color: var(--text-color) !important;
+  background-color: var(--main-color) !important;
+  font-size: 1.1rem !important;
 }

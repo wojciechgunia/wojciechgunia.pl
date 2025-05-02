@@ -1,7 +1,6 @@
 <app-header></app-header>
-<button mat-flat-button (click)="toggleTheme()">
-  Przełącz motyw
-</button>
-{{isDarkMode}}
-<p>222</p>
+<div class="container mt-5">
+  <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>
+<notifier-container></notifier-container>

@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MatIcon } from '@angular/material/icon';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatOption, MatSelect } from '@angular/material/select';
+import { ThemeToggleComponent } from './components/header/theme-toggle/theme-toggle.component';
+import { LangSelectComponent } from './components/header/lang-select/lang-select.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ThemeToggleComponent,
+    LangSelectComponent,
+  ],
   imports: [
-    CommonModule,
-    MatIcon,
+    SharedModule,
     NgOptimizedImage,
-    MatLabel,
-    MatSelect,
-    MatFormField,
-    MatOption,
+    RouterLink,
+    RouterLinkActive,
+    HttpClientModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

@@ -1,0 +1,43 @@
+form, h1 {
+  user-select: none;
+}
+
+.login-box {
+  position: relative;
+  background-filter: blur(25px);
+  background-color: var(--form-background);
+  border: 2px solid var(--main-color);
+  border-radius: 15px;
+  padding: 0em 2.5em 4em 2.5em;
+}
+
+.label-form {
+  position: relative;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--main-color);
+  width: 300px;
+  padding: 10px;
+  margin: 0 auto 50px;
+  color: white !important;
+}
+
+.label-form::before, .label-form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.label-form::before {
+  left: -30px;
+  border-top-right-radius: 50%;
+  box-shadow: 15px 0 0 var(--main-color);
+}
+
+.label-form::after{
+  right: -30px;
+  border-top-left-radius: 50%;
+  box-shadow: -15px 0 0 var(--main-color);
+}
+

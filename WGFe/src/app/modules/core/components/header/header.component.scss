@@ -15,13 +15,35 @@ a {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 87.5;
+  font-variation-settings: "width" 87.5;
   span {
     color: black;
   }
 
   span:nth-child(2):hover {
     color: blue;
+  }
+}
+
+.link-btn {
+  width: 50px;
+  height: 50px;
+  margin-inline: 10px;
+  transition: 0.01s;
+  span {
+    display: none;
+    width: 0;
+    visibility: hidden;
+    transition: 0.01s;
+    font-weight: 600;
+  }
+}
+.link-btn:hover {
+  width: auto;
+  margin-inline: 1px;
+  span {
+    display: inline !important;
+    width: auto;
+    visibility: visible;
   }
 }

@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-1 col-lg-3"></div>
+  <div class="col-md-10 col-lg-6 login-box">
+    <h1 class="text-center label-form">Logowanie</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-input">
+        <mat-form-field appearance="outline" class="mb-2">
+          <mat-label>Login</mat-label>
+          <input matInput [formControl]="controls.login"/>
+          <mat-icon matSuffix>person_outline</mat-icon>
+          <mat-error *ngIf="controls.login.invalid">{{getErrorMessage(controls.login)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-input">
+        <mat-form-field appearance="outline" class="mb-4">
+          <mat-label>Hasło</mat-label>
+          <input matInput [type]="hide() ? 'password' : 'text'" [formControl]="controls.password"/>
+          <button
+            mat-icon-button
+            type="button"
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="controls.password.invalid">{{getErrorMessage(controls.password)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div
+        class="alert alert-warning alert-dismissible fade show mt-2"
+        role="'alert"
+        *ngIf="errorMsg | async as error"
+      >
+        {{ error }}
+      </div>
+      <div class="d-flex justify-content-end">
+        <button mat-raised-button [disabled]="loginForm.invalid" type="submit">Zaloguj&nbsp;<mat-icon>exit_to_app</mat-icon></button>
+      </div>
+    </form>
+  </div>
+</div>
+

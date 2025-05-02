@@ -3,21 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { StoreModule } from '@ngrx/store';
-import { MatButton } from '@angular/material/button';
 import { CoreModule } from './modules/core/core.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { authReducer } from './modules/auth/store/auth.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthEffects } from './modules/auth/store/auth.effects';
+
+const customNotifierOptions: NotifierOptions = {
+  position: {
+    horizontal: {
+      position: 'right',
+      distance: 12,
+    },
+    vertical: {
+      position: 'top',
+      distance: 90,
+      gap: 10,
+    },
+  },
+  theme: 'material',
+};
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
-    MatButton,
+    StoreModule.forRoot({ auth: authReducer }),
+    AuthModule,
     CoreModule,
+    BrowserAnimationsModule,
+    EffectsModule.forRoot([AuthEffects]),
+    NotifierModule.withConfig(customNotifierOptions),
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
